@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Novák;Jan;;;
+FN:Jan Novák
+ORG:Rubix Czech s.r.o.
+TITLE:Obchodní zástupce
+TEL;WORK;VOICE:+420123456789
+EMAIL;WORK:jan.novak@rubix.cz
+URL:https://cz.rubix.com
+ADR;WORK:;;Na Rovince 1066;Ostrava-Hrabová;;720 00;Czech Republic
+END:VCARD
