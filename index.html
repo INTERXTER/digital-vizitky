@@ -6,114 +6,176 @@
 <title>Digitální vizitka</title>
 
 <style>
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:#071b53;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-}
+  :root{
+    --yellow:#ffe000;
+    --blue:#071b53;
+    --white:#ffffff;
+    --text:#0b1633;
+    --muted:#5b6475;
+    --border:#e7e9ee;
+  }
 
-.card{
-  background:#ffffff;
-  width:100%;
-  max-width:420px;
-  border-radius:18px;
-  padding:30px 25px;
-  box-shadow:0 20px 60px rgba(0,0,0,.25);
-  text-align:center;
-}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:var(--text);
+    background:#f3f5f8;
+  }
 
-.logo{
-  width:160px;
-  margin-bottom:25px;
-}
+  /* Header like a corporate site */
+  .header{
+    background:var(--blue);
+    color:var(--white);
+    border-bottom:4px solid var(--yellow);
+  }
+  .header-inner{
+    max-width:980px;
+    margin:0 auto;
+    padding:18px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-width:0;
+  }
+  .brand img{
+    height:34px;
+    width:auto;
+    display:block;
+  }
+  .brand-title{
+    font-size:14px;
+    opacity:.9;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
 
-.name{
-  font-size:22px;
-  font-weight:700;
-  color:#071b53;
-  margin:0;
-}
+  .container{
+    max-width:980px;
+    margin:0 auto;
+    padding:28px 18px 60px;
+  }
 
-.role{
-  margin:6px 0 25px;
-  color:#555;
-  font-size:14px;
-}
+  .panel{
+    background:var(--white);
+    border:1px solid var(--border);
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+  }
 
-.btn{
-  display:block;
-  text-decoration:none;
-  padding:13px;
-  border-radius:12px;
-  margin:10px 0;
-  font-weight:600;
-  transition:0.2s ease;
-}
+  .hero{
+    padding:26px 26px 10px;
+    border-bottom:1px solid var(--border);
+  }
+  .name{
+    margin:0;
+    font-size:26px;
+    font-weight:700;
+    color:var(--blue);
+  }
+  .meta{
+    margin:8px 0 0;
+    color:var(--muted);
+    font-size:14px;
+  }
 
-.btn-primary{
-  background:#ffe000;
-  color:#071b53;
-}
+  .actions{
+    padding:22px 26px 26px;
+    display:grid;
+    gap:12px;
+  }
 
-.btn-primary:hover{
-  background:#ffd000;
-}
+  /* Buttons like corporate CTAs */
+  .btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:14px 14px;
+    text-decoration:none;
+    font-weight:700;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--yellow);
+    color:var(--blue);
+    border-color:rgba(0,0,0,.05);
+  }
+  .btn-primary:hover{filter:brightness(.97);}
+  .btn-secondary{
+    background:var(--white);
+    color:var(--blue);
+    border-color:var(--blue);
+  }
+  .btn-secondary:hover{background:#f7f9ff;}
 
-.btn-secondary{
-  background:#071b53;
-  color:#ffffff;
-}
+  .note{
+    padding:0 26px 24px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.35;
+  }
 
-.btn-secondary:hover{
-  background:#0a2a7a;
-}
+  .footer{
+    margin-top:14px;
+    color:var(--muted);
+    font-size:12px;
+    text-align:center;
+  }
 
-.small{
-  margin-top:18px;
-  font-size:12px;
-  color:#777;
-}
+  @media (min-width:700px){
+    .actions{grid-template-columns:1fr 1fr;}
+    .btn-primary{grid-column:1 / -1;} /* primary full width */
+  }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <!-- Změň název souboru pokud máš jiný -->
+      <img src="Rubix_logo_yellow_RGB_png.png" alt="RUBIX">
+      <div class="brand-title">Digitální vizitka</div>
+    </div>
 
-<img src="Rubix_logo_yellow_RGB.png" class="logo" alt="RUBIX">
+    <div class="brand-title">CZ</div>
+  </div>
+</header>
 
-<h1 class="name">Jan Novák</h1>
-<div class="role">Obchodní zástupce · RUBIX</div>
+<main class="container">
+  <section class="panel">
 
-<a class="btn btn-secondary" href="tel:+420123456789">
-📞 Zavolat
-</a>
+    <div class="hero">
+      <h1 class="name">Jan Novák</h1>
+      <div class="meta">Obchodní zástupce · RUBIX Czech</div>
+    </div>
 
-<a class="btn btn-secondary" href="mailto:jan.novak@rubix.cz">
-✉️ Napsat e-mail
-</a>
+    <div class="actions">
+      <a class="btn btn-secondary" href="tel:+420123456789">📞 Zavolat</a>
+      <a class="btn btn-secondary" href="mailto:jan.novak@rubix.cz">✉️ Napsat e-mail</a>
 
-<a class="btn btn-primary" href="jan-novak.vcf" download>
-📥 Uložit kontakt
-</a>
+      <a class="btn btn-primary" href="jan-novak.vcf" download>📥 Uložit kontakt</a>
 
-<a class="btn btn-secondary" href="Rubix-Czech.pdf" target="_blank">
-📄 Profil společnosti
-</a>
+      <a class="btn btn-secondary" href="Rubix-Czech.pdf" target="_blank">📄 Profil společnosti</a>
+      <a class="btn btn-secondary" href="https://cz.rubix.com" target="_blank">🌐 cz.rubix.com</a>
+    </div>
 
-<a class="btn btn-secondary" href="https://cz.rubix.com" target="_blank">
-🌐 Web cz.rubix.com
-</a>
+    <div class="note">
+      Tip: Pokud se ti kontakt ukládá špatně v Outlooku na PC, použij verzi vCard uloženou jako ANSI (Windows-1250).
+    </div>
 
-<div class="small">
-Digitální vizitka RUBIX
-</div>
+  </section>
 
-</div>
+  <div class="footer">© RUBIX</div>
+</main>
 
 </body>
 </html>
